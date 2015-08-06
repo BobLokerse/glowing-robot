@@ -16,14 +16,19 @@ namespace Mvc5App_AppVeyorTryout.Controllers
         //
         // GET: /Account/Index
 
-        public ActionResult Index() => View();
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         //
         // GET: /Account/Login
 
         [AllowAnonymous]
-        public ActionResult Login() => View();
-
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         //
         // POST: /Account/Login
@@ -71,8 +76,10 @@ namespace Mvc5App_AppVeyorTryout.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register() => View();
-
+        public ActionResult Register()
+        {
+            return View();
+        }
 
         //
         // POST: /Account/Register
@@ -86,8 +93,7 @@ namespace Mvc5App_AppVeyorTryout.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, 
-                    isApproved: true, providerUserKey: null, status: out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -107,8 +113,10 @@ namespace Mvc5App_AppVeyorTryout.Controllers
         //
         // GET: /Account/ChangePassword
 
-        public ActionResult ChangePassword() => View();
-
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
 
         //
         // POST: /Account/ChangePassword
@@ -150,7 +158,10 @@ namespace Mvc5App_AppVeyorTryout.Controllers
         //
         // GET: /Account/ChangePasswordSuccess
 
-        public ActionResult ChangePasswordSuccess() => View();
+        public ActionResult ChangePasswordSuccess()
+        {
+            return View();
+        }
 
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
